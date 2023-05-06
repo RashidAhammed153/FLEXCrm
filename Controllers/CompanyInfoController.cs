@@ -78,6 +78,7 @@ namespace FLEXCrm.Controllers
         }
 
 
+        [HttpGet]
         private bool CompanyInfoExists(int id)
         {
             return _companyInfo.CheckCompanyInfo(id);

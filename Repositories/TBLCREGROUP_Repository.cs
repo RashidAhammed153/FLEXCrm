@@ -1,5 +1,5 @@
 ﻿using FLEXCrm.Data;
-using FLEXCrm.DEMODATA;
+using FLEXCrm.Models;
 using FLEXCrm.Interfaces;
 using FLEXCrm.Repositories.BaseRepository;
 

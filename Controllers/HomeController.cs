@@ -26,94 +26,6 @@ namespace FLEXCrm.Controllers
             Configuration = configuration;
         }
 
-        public IActionResult Index()
-        {
-            return Ok();
-        }
-
-        public async Task<IActionResult> Dashboard()
-        {
-
-            return Ok();
-        }
-
-        public IActionResult Login(bool isSuccess = false)
-        {
-            return Ok();
-        }
-
-        //public IActionResult MailRequest()
-        //{
-        //    var message = new MimeMessage();
-        //    message.From.Add(new MailboxAddress("SDM", "hello@flexinfosys.com"));
-        //    message.To.Add(new MailboxAddress("Info", "info@flexinfosys.com"));
-        //    message.Subject = "SDM Confirmation";
-        //    message.Body = new TextPart("Plain")
-        //    {
-        //        Text = "This is confirmation mail"
-        //    };
-
-        //    using (var client = new SmtpClient())
-        //    {
-        //        client.Connect("mail.flexinfosys.com", 587, false);
-        //        client.Authenticate("hello@flexinfosys.com", "g3no7P@6");
-        //        client.Send(message);
-        //        client.Disconnect(true);
-        //    }
-
-        //    return Ok();
-        //}
-        public IActionResult Chart()
-        {
-            return Ok();
-        }
-        //public JsonResult GetDashboardChart()
-        //{
-        //    List<Vewpscntmaster> cntData;
-        //    DateTime startDate = (DateTime)_context.Vewpscntmasters.Max(m => m.Cntdate);
-
-        //    try
-        //    {
-        //        cntData = _context.Vewpscntmasters.Where(p => p.Cntmonth == startDate.ToString("MMMM")).ToList();
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-
-        //    return Json(cntData);
-        //}
-        public class DeviceStatus
-        {
-            public int Value { get; set; }
-            public string Data { get; set; }
-        }
-        //public JsonResult GetMonitoringChart()
-        //{
-        //    Vewpsdevicestatussum cntData;
-        //    cntData = _context.Vewpsdevicestatussums.FirstOrDefault();
-
-        //    var deptList = new List<DeviceStatus>()
-        //    {
-        //        new DeviceStatus() { Value = int.Parse(cntData.Dvproductive.ToString()), Data= "Productive" },
-        //        new DeviceStatus() { Value = int.Parse(cntData.Dvserror.ToString()), Data= "Critical Error" },
-        //        new DeviceStatus() { Value = int.Parse(cntData.Dvsdisconnected.ToString()), Data= "Disconnected" },
-        //        new DeviceStatus() { Value = int.Parse(cntData.Dvjstatus.ToString()), Data= "Paper Misfeed" },
-        //        new DeviceStatus() { Value = int.Parse(cntData.Dvcocover.ToString()), Data= "Cover Open" },
-        //        new DeviceStatus() { Value = int.Parse(cntData.Dvpstatus2.ToString()), Data= "Out of Paper" }
-        //    };
-
-        //    var opt = new JsonSerializerOptions() { WriteIndented = true };
-        //    string strJson = JsonSerializer.Serialize<IList<DeviceStatus>>(deptList, opt);
-
-        //    return Json(deptList);
-        //}
-
-        public IActionResult Viewer()
-        {
-            return Ok();
-        }
-
         [HttpGet("{ctrl}/{acn}/{cntMonth}/{cntYear}/{cntDate}/{rptRef}/{rptNo}")]
         public IActionResult Viewer(string ctrl, string acn, string cntMonth, string cntYear, string cntDate, string rptRef, int rptNo, bool isSuccess = false)
         {
@@ -185,33 +97,13 @@ namespace FLEXCrm.Controllers
             return Ok("Viewer");
         }
 
-        public async Task<IActionResult> Monitoring(int pg = 1, string searchKey = "")
-        {
-
-            return Ok();
-        }
-
-        public async Task<IActionResult> Counter(int pg = 1, string searchKey = "")
-        {
-
-            return Ok();
-        }
-
-        public IActionResult Privacy()
-        {
-            return Ok();
-        }
-
-        public IActionResult Contact()
-        {
-            return Ok();
-        }
-
+        [HttpGet("DeviceList")]
         public IActionResult DeviceList()
         {
             return Ok("DeviceList");
         }
 
+        [HttpGet("Error")]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
