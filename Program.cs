@@ -18,6 +18,7 @@ builder.Services.AddDbContext<FLEXBDContext>
 builder.Services.AddTransient<IUser, UserRepository>();
 builder.Services.AddTransient<ICompanyInfo, CompanyInfoRepository>();
 builder.Services.AddTransient<ITBLCRMGROUP, TBLCRMGROUP_Repository>();
+builder.Services.AddTransient<ITeamInfo, TeamInfoRepository>();
 builder.Services.AddControllers();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>

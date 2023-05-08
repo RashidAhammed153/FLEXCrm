@@ -26,19 +26,11 @@ namespace FLEXCrm.Repositories
             }
         }
 
-        //public bool CheckTeamInfo(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
         public bool CheckTeamInfo(int id)
         {
             return _flexbdContext.TBLCRMTEAM.Any(e => e.EMPID == id.ToString());
         }
 
-        //public TBLCRMTEAM DeleteTeamInfo(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
         public TBLCRMTEAM DeleteTeamInfo(int id)
         {
             try
