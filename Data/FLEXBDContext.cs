@@ -124,7 +124,7 @@ namespace FLEXCrm.Data
         public virtual DbSet<TBLUSERGROUP> TBLUSERGROUPs { get; set; } = null!;
         public virtual DbSet<TBLUSERGROUPPRIVELEGE> TBLUSERGROUPPRIVELEGEs { get; set; } = null!;
         public virtual DbSet<TBLUSERGROUPPRIVELEGETMP> TBLUSERGROUPPRIVELEGETMPs { get; set; } = null!;
-        public virtual DbSet<TBLUSERINFO> TBLUSERINFOs { get; set; } = null!;
+        public virtual DbSet<TBLUSERINFO> TBLUSERINFO { get; set; } = null!;
         public virtual DbSet<TBLUSERREPORT> TBLUSERREPORTs { get; set; } = null!;
         public virtual DbSet<TBLZONE> TBLZONEs { get; set; } = null!;
         public virtual DbSet<UserInfo> UserInfos { get; set; } = null!;

@@ -67,7 +67,7 @@ namespace FLEXCrm.Controllers
         [HttpGet]
         private async Task<TBLUSERINFO> GetUser(string email, string password)
         {
-            return await _context.TBLUSERINFOs.FirstOrDefaultAsync(u => u.EMAIL == email && u.PASSWORD == password);
+            return await _context.TBLUSERINFO.FirstOrDefaultAsync(u => u.EMAIL == email && u.PASSWORD == password);
         }
     }
 }
