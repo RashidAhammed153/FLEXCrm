@@ -62,7 +62,7 @@ namespace FLEXCrm.Data
         public virtual DbSet<TBLCREGROUP> TBLCREGROUPs { get; set; } = null!;
         public virtual DbSet<TBLCRMCLIENT> TBLCRMCLIENT { get; set; } = null!;
         public virtual DbSet<TBLCRMGROUP> TBLCRMGROUP { get; set; } = null!;
-        public virtual DbSet<TBLCRMREGION> TBLCRMREGIONs { get; set; } = null!;
+        public virtual DbSet<TBLCRMREGION> TBLCRMREGION { get; set; } = null!;
         public virtual DbSet<TBLCRMTEAM> TBLCRMTEAM { get; set; } = null!;
         public virtual DbSet<TBLCRMTECHAMC> TBLCRMTECHAMC { get; set; } = null!;
         public virtual DbSet<TBLCRMTECHDETAIL> TBLCRMTECHDETAILs { get; set; } = null!;

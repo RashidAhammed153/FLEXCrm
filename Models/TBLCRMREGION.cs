@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FLEXCrm.DEMODATA
+namespace FLEXCrm.Data
 {
     public partial class TBLCRMREGION
     {

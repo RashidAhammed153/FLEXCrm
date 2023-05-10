@@ -6,18 +6,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FLEXCrm.Repositories
 {
-    public class TBLCRMGROUP_Repository : BaseRepository<TBLCRMGROUP>, ITBLCRMGROUP
+
+    public class TBLCRMREGION_Repository : BaseRepository<TBLCRMREGION>, ITBLCRMREGION
     {
-        public TBLCRMGROUP_Repository(FLEXBDContext _flexbdContext) : base(_flexbdContext)
+        public TBLCRMREGION_Repository(FLEXBDContext _flexbdContext) : base(_flexbdContext)
         {
 
         }
 
-        public void AddGroupInfo(TBLCRMGROUP GroupInfo)
+        public void AddRegionInfo(TBLCRMREGION RegionInfo)
         {
             try
             {
-                _flexbdContext.TBLCRMGROUP.Add(GroupInfo);
+                _flexbdContext.TBLCRMREGION.Add(RegionInfo);
                 _flexbdContext.SaveChanges();
             }
             catch
@@ -26,22 +27,22 @@ namespace FLEXCrm.Repositories
             }
         }
 
-        public bool CheckGroupInfo(int id)
+        public bool CheckRegionInfo(int id)
         {
-            return _flexbdContext.TBLCRMGROUP.Any(e => e.CRGID == id.ToString());
+            return _flexbdContext.TBLCRMREGION.Any(e => e.DIID == id.ToString());
         }
 
-        public TBLCRMGROUP DeleteGroupInfo(int id)
+        public TBLCRMREGION DeleteRegionInfo(int id)
         {
             try
             {
-                TBLCRMGROUP? GroupInfo = _flexbdContext.TBLCRMGROUP.Find(id);
+                TBLCRMREGION? RegionInfo = _flexbdContext.TBLCRMREGION.Find(id);
 
-                if (GroupInfo != null)
+                if (RegionInfo != null)
                 {
-                    _flexbdContext.TBLCRMGROUP.Remove(GroupInfo);
+                    _flexbdContext.TBLCRMREGION.Remove(RegionInfo);
                     _flexbdContext.SaveChanges();
-                    return GroupInfo;
+                    return RegionInfo;
                 }
                 else
                 {
@@ -54,18 +55,18 @@ namespace FLEXCrm.Repositories
             }
         }
 
-        public TBLCRMGROUP GetGroupDetails(int id)
+        public TBLCRMREGION GetRegionDetails(int id)
         {
             try
             {
-                TBLCRMGROUP? GroupInfo = _flexbdContext.TBLCRMGROUP.Find(id);
-                if (GroupInfo != null)
+                TBLCRMREGION? RegionInfo = _flexbdContext.TBLCRMREGION.Find(id);
+                if (RegionInfo != null)
                 {
-                    return GroupInfo;
+                    return RegionInfo;
                 }
                 else
                 {
-                    return GroupInfo;
+                    return RegionInfo;
                 }
             }
             catch
@@ -74,11 +75,11 @@ namespace FLEXCrm.Repositories
             }
         }
 
-        public List<TBLCRMGROUP> GetGroupInfoList()
+        public List<TBLCRMREGION> GetRegionInfoList()
         {
             try
             {
-                return _flexbdContext.TBLCRMGROUP.ToList();
+                return _flexbdContext.TBLCRMREGION.ToList();
             }
             catch (Exception e)
             {
@@ -87,11 +88,11 @@ namespace FLEXCrm.Repositories
             }
         }
 
-        public void UpdateGroupInfo(TBLCRMGROUP GroupInfo)
+        public void UpdateRegionInfo(TBLCRMREGION RegionInfo)
         {
             try
             {
-                _flexbdContext.Entry(GroupInfo).State = EntityState.Modified;
+                _flexbdContext.Entry(RegionInfo).State = EntityState.Modified;
                 _flexbdContext.SaveChanges();
             }
             catch
