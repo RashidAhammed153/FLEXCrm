@@ -10,7 +10,7 @@ namespace FLEXCrm.Controllers
 {
 
     [Authorize]
-    [Route("api/TBLCRMTECHMASTER")]
+    [Route("api/CRMTECHMASTER")]
     [ApiController]
     public class CRMTECHMASTERController : ControllerBase
     {
